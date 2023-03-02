@@ -1,0 +1,33 @@
+﻿<h2>Formular adaugare task</h2>
+<form method="post" action="/Tasks/New">
+    <label for="status">Choose a status:</label>
+    <select class="form-select" name="status">
+        <option value="to do">to do</option>
+        <option value="doing">doing</option>
+        <option value="done">done</option>
+    </select>
+    <br />
+    <label>Descriere</label>
+    <br />
+    <input type="text" class="form-control" name="content" />
+    <br />
+    <label>Data Incepere</label>
+    <br />
+    <input type="datetime-local" class="form-control"  name="start_date">
+    <br />
+    <label>Data Finalizare</label>
+    <br />
+    <input type="datetime-local" class="form-control"  name="end_date" />
+    <br />
+    <label for="UserId">Alege cui îi atribui taskul:</label>
+    <select class="form-select" name="UserId">
+        @foreach (var user in ViewBag.Users)
+        {
+            <option value="@user.UserId">@user.User.UserName</option>
+        }
+    </select>
+    <input type="hidden" name="ProjectId" value="@ViewBag.Id" />
+    <br /><br />
+    <br />
+    <button class="btn btn-primary" type="submit">Adaugă task</button>
+</form>

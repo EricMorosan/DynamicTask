@@ -1,0 +1,16 @@
+﻿<h2>Proiectele Tale</h2>
+<br />
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+@foreach (var project in ViewBag.Projects)
+{   <div class="w3-panel w3-blue w3-card-4">
+    <h3> <a href = "/Projects/Show/@project.Id" style=text-decoration:none> @project.title </a></h3>
+       
+    <br/>
+@*    <a href = "/Projects/Edit/@project.Id" > Editare proiect </a>
+    <br />*@
+    </div>
+}
+<br>
+<div class="w3-panel w3-sand w3-serif">
+<h6><a href="/Projects/New" style=text-decoration:none>ADAUGĂ UN NOU PROIECT</a><h6>
+</div> 

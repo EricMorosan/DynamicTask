@@ -1,0 +1,75 @@
+﻿@using Task = Proiect.Models.Task;
+@*@using MultipleModelInOneView;*@
+
+@model dynamic
+
+<h2>@Model.Task.content</h2>
+
+
+<h4>Comentarii</h4>
+
+@foreach (var comment in Model.Comments)
+{ 
+    @if (comment.TaskId == Model.Task.Id)
+    {
+        <h6>@comment.content</h6>
+        <form method="post"  action="/Comments/Edit/@comment.Id">
+            <button class="button-1"  type="submit">Editează comentariul</button>
+        </form>
+        
+        <form method="post" action="/Comments/Delete/@comment.Id">
+            <button class="button-1"  type="submit">Şterge comentariul</button>
+        </form>
+        <br />
+    }
+    
+
+}
+<br />
+<a href="/Comments/New/@Model.Task.Id"> Adăugare comentariu </a>
+<br />
+<a href="/Projects/Show/@Model.Task.ProjectId">Înapoi la proiect</a>
+
+
+
+
+
+<style>
+
+    .button-1 {
+        padding-bottom: 10px;
+        background-color: #9933ff;
+        border-radius: 8px;
+        border-style: none;
+        box-sizing: border-box;
+        color: #FFFFFF;
+        cursor: pointer;
+        display: inline-block;
+        font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+        height: 40px;
+        width: 200px;
+        line-height: 20px;
+        list-style: none;
+        margin: 0;
+        outline: none;
+        padding: 10px 16px;
+        position: relative;
+        text-align: center;
+        text-decoration: none;
+        transition: color 100ms;
+        vertical-align: baseline;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+    }
+
+        .button-1:hover,
+        .button-1:focus {
+            background-color: #F082AC;
+        }
+
+
+
+</style>

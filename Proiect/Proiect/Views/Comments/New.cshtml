@@ -1,0 +1,9 @@
+﻿<h2>Formular adaugare comentariu</h2>
+<form method="post" action="/Comments/New">
+    <label>Content</label>
+    <br />
+    <input type="text" class="form-control" name="content" />
+    <br /><br />
+    <input type="hidden" name="TaskId" value="@ViewBag.Id" />
+    <button type="submit">Adaugă comentariu</button>
+</form>

@@ -1,0 +1,22 @@
+﻿<h2>Editare proiect</h2>
+<br />
+<form method="post" action="/Projects/Edit/@ViewBag.Project.Id">
+    <label>Titlu</label>
+    <br />
+    <input type="text" class="form-control" name="title" value="@ViewBag.Project.title" />
+    <br /> <br />
+    <label>Descriere</label>
+    <br />
+    <input type="text" class="form-control" name="content" value="@ViewBag.Project.content" />
+    <br /><br />
+    <label>Data Incepere</label>
+    <br />
+    <input type="datetime" class="form-control" name="start_date" value="@ViewBag.Project.start_date" />
+    <br /><br />
+    <label>Data Finalizare</label>
+    <br />
+    <input type="datetime" class="form-control" name="end_date" value="@ViewBag.Project.end_date" />
+    <br />
+    <br />
+    <button type="submit">Modifică proiect</button>
+</form>

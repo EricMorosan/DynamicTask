@@ -1,0 +1,12 @@
+﻿<h2>Formular adaugare echipa</h2>
+<form method="post" action="/Teams/New">
+
+    <label>Nume</label>
+    <br />
+    <input type="text" class="form-control" name="name" />
+    <br /><br />
+
+    <input type="hidden" name="ProjectId" value=" @ViewBag.Id" />
+
+    <button class="btn btn-primary" type="submit">Finalizare echipă</button>
+</form>
